@@ -11,15 +11,9 @@ import (
 
 // Register adalah fungsi untuk registrasi user baru
 func Register(c *gin.Context) {
-	var body struct {
-		Name         string
-		Phone_Number string
-		Email        string
-		Password     string
-		Status       string
-	}
+	var body models.UserBody
 
-	if c.Bind(&body) != nil {
+	if c.BindJSON(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Failed to read body",
 		})
@@ -61,7 +55,7 @@ func Login(c *gin.Context) {
 		Password string
 	}
 
-	if c.Bind(&body) != nil {
+	if c.BindJSON(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Failed to read body",
 		})

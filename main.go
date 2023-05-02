@@ -23,11 +23,16 @@ func main() {
 	//toko route
 	r.POST("/tokos", controllers.CreateToko)
 	r.GET("/tokos", controllers.SemuaToko)
-	r.GET("/tokos/toko_id", controllers.TemukanToko)
-	r.PATCH("/tokos/toko_id", controllers.UpdateToko)
-	r.DELETE("/tokos/toko_id", controllers.DeleteToko)
+	r.GET("/tokos/:toko_id", controllers.TemukanToko)
+	r.PATCH("/tokos/:toko_id", controllers.UpdateToko)
+	r.DELETE("/tokos/:toko_id", controllers.DeleteToko)
 
 	//barang route
+	r.POST("/barangs", controllers.CreateToko)
+	r.GET("/barangs", controllers.SemuaToko)
+	r.GET("/barangs/:toko_id/:barang_id", controllers.TemukanToko)
+	r.PATCH("/barangs/:toko_id/:barang_id", controllers.UpdateToko)
+	r.DELETE("/barangs/:toko_id/:barang_id", controllers.DeleteToko)
 
 	r.Run()
 }

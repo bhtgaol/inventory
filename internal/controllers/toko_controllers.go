@@ -14,7 +14,7 @@ func CreateToko(c *gin.Context) {
 	// untuk user id, di ambil dari cookie, untuk sementara static
 	var user_id = "1"
 
-	if c.Bind(&body) != nil {
+	if c.BindJSON(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"error": "Failed to read body",
 		})

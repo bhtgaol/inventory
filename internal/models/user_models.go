@@ -11,3 +11,12 @@ type User struct {
 	Password     string
 	Status       string
 }
+
+// UserBody adalah model yang akan menampung data user dari body
+type UserBody struct {
+	Name         string `json:"name"`
+	Phone_Number string `json:"phone_number"`
+	Email        string `json:"email"`
+	Password     string `json:"password"`
+	Status       string `json:"status"`
+}
