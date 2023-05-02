@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateToko adalah fungsi untuk melakukan create objek toko
 func CreateToko(c *gin.Context) {
 	var body models.TokoBody
 	// untuk user id, di ambil dari cookie, untuk sementara static
